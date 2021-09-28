@@ -12,3 +12,5 @@ class MercadoLibre(unittest,TestCase):
         driver.implicitly_wait(30)
         driver.maximize_window()
         driver.get()
+
+        
