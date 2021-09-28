@@ -8,6 +8,7 @@ from selenium.webdriver.common.by import By
 from time import sleep
 
 class MercadoLibre(unittest.TestCase):
+    
 
     def setUp(self):
         self.driver = webdriver.Chrome(executable_path=r'C://Users/pc/OneDrive/Escritorio/driverCho/chromedriver.exe')
