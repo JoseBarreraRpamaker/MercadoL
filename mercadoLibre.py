@@ -9,11 +9,10 @@ from time import sleep
 
 class MercadoLibre(unittest.TestCase):
 
-
     def setUp(self):
-        self.driver = webdriver.Chrome(executable_path=r'C://Users/pc/OneDrive/Escritorio/driverCho/chromedriver.exe')
+        self.driver = webdriver.Chrome()
         driver = self.driver
-        driver.implicitly_wait(30)
+        driver.implicitly_wait(20)
         driver.get('https://www.mercadolibre.com/')
         driver.maximize_window()
 
@@ -28,27 +27,23 @@ class MercadoLibre(unittest.TestCase):
         buscador.clear()
         buscador.send_keys("Playstation 5")
         buscador.submit()
-        sleep(4)
 
-        ubicacion = driver.find_element_by_partial_link_text("Maldonado")
-        ubicacion.click()
-        sleep(3)
-
-        condicion = driver.find_element_by_partial_link_text("Nuevo")
-        condicion.click()
-        sleep(4)
+    
 
         articulos =  []
         precios = []
+        i=2
+    
+        while i <= 3:
+            articulo = driver.find_element_by_xpath(f'//*[@id="root-app"]/div/div/section/ol/li[{i}]/div/div/div[2]/div[1]/a/h2').text
+            articulos.append(articulo)                      
+            precio = driver.find_element_by_xpath(f'//*[@id="root-app"]/div/div/section/ol/li[{i}]/div/div/div[2]/div[2]/div[1]/div[1]/a/div/div/span[1]/span[2]/span[2]').text
+            precios.append(precio)                    
+            i += 1   
+            print(articulos,precios)                                 
 
-        for i in range(5):
-            articulo = driver.find_element_by_xpath(f'/html/body/main/div/div/section/ol/li[{i + 1}]/div/div/div[2]/div[1]/a/h2').text
-            articulos.append(articulo)
-            precio = driver.find_element_by_xpath(f'/html/body/main/div/div/section/ol/li[{i + 1}]/div/div/div[2]/div[2]/div[1]/div[1]/a/div/div/span[1]/span[2]/span[2]').text
-            precios.append(precio)
 
-
-            print(articulos,precios)
+           
 
 
     
