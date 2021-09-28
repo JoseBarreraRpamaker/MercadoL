@@ -28,7 +28,7 @@ class MercadoLibre(unittest.TestCase):
         buscador.clear()
         buscador.send_keys("Playstation 5")
         buscador.submit()
-        sleep(3)
+        sleep(4)
 
         ubicacion = driver.find_element_by_partial_link_text("Maldonado")
         ubicacion.click()
