@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 from time import sleep
 
 class MercadoLibre(unittest.TestCase):
-    
+
 
     def setUp(self):
         self.driver = webdriver.Chrome(executable_path=r'C://Users/pc/OneDrive/Escritorio/driverCho/chromedriver.exe')
@@ -36,7 +36,7 @@ class MercadoLibre(unittest.TestCase):
 
         condicion = driver.find_element_by_partial_link_text("Nuevo")
         condicion.click()
-        sleep(3)
+        sleep(4)
 
         articulos =  []
         precios = []
