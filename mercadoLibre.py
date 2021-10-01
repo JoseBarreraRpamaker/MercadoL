@@ -40,7 +40,8 @@ class MercadoLibre(unittest.TestCase):
             precio = driver.find_element_by_xpath(f'//*[@id="root-app"]/div/div/section/ol/li[{i}]/div/div/div[2]/div[2]/div[1]/div[1]/a/div/div/span[1]/span[2]/span[2]').text
             precios.append(precio)                    
             i += 1   
-            print(articulos,precios)                                 
+            print(articulos,precios)
+            print("productos")                                 
 
 
            
