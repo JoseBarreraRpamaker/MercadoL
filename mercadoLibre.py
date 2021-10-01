@@ -41,7 +41,8 @@ class MercadoLibre(unittest.TestCase):
             precios.append(precio)                    
             i += 1   
             print(articulos,precios)
-            print("productos")                                 
+            print("nuevo cambios")
+                                       
 
 
            
