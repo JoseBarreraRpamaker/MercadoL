@@ -7,6 +7,7 @@ from selenium.common.exceptions import NoAlertPresentException
 from selenium.webdriver.common.by import By
 from time import sleep
 
+
 class MercadoLibre(unittest.TestCase):
 
     def setUp(self):
@@ -21,14 +22,14 @@ class MercadoLibre(unittest.TestCase):
 
         pais = driver.find_element_by_id("UY")
         pais.click()
-
+        sleep(4)
         buscador = driver.find_element_by_name("as_word")
         buscador.click()
         buscador.clear()
         buscador.send_keys("Playstation 5")
         buscador.submit()
 
-    
+
 
         articulos =  []
         precios = []
